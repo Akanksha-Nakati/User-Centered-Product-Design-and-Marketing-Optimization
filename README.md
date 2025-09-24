@@ -14,7 +14,7 @@ This project serves as both a design portfolio and a strategic case study — sh
 
 This project is not based on real data—it uses simulated datasets created to reflect real-world marketing challenges in the beauty industry. The data was processed through a custom ETL pipeline in MySQL before being visualized in Tableau Public.
 
-🚀 Project Workflow
+### 🚀 Project Workflow
 
 Data Simulation
 
@@ -32,7 +32,7 @@ Visualization in Tableau Public
 
 Developed five dashboards to showcase strategic insights.
 
-📂 Dashboards
+### 📂 Dashboards
 
 Executive Dashboard → Revenue, ROAS, CPA, Conversions overview.
 
@@ -44,7 +44,7 @@ Product Dashboard → Top product performance, funnel conversion analysis.
 
 Audience Dashboard → Reach, engagement, LTV, demographic breakdown.
 
-🔑 Key Insights (Simulated)
+### 🔑 Key Insights 
 
 Email Marketing → Underfunded but top ROI driver.
 
@@ -56,17 +56,14 @@ Holiday Lip Set → Strong seasonal performer with high conversions.
 
 Gen Z & Beauty Enthusiasts → Most engaged and profitable audience segment.
 
-🛠️ Tools & Tech
+### 🛠️ Tools & Tech
 
 MySQL → ETL pipeline (staging → transformation → reporting tables).
 
 Tableau Public → Dashboard creation & visualization.
 
-Excel / CSV → Initial simulated dataset creation.
 
-📸 Sample Visualization
-
-🎯 Strategic Recommendations
+### 🎯 Strategic Recommendations
 
 Reallocate $46K into Email Marketing to capture ROI growth.
 
