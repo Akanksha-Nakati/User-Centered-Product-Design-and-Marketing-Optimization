@@ -1,76 +1,116 @@
-# User-Centered-Product-Design-and-Marketing-Optimization
+# 💄 Rare Beauty — User-Centered Product Design & Marketing Optimization
 
- This is an ongoing project focused on improving Rare Beauty’s digital presence through a blend of design, marketing analysis, and strategic thinking. The goal is to explore how the brand can better connect with its audience across every stage of the marketing and sales funnel. The project began with a strategic article outlining Rare Beauty’s user journey and identifying friction points using the AARRR and HEART frameworks. From there, the initiative branches into four key tracks:
+> A case study combining UX research and marketing analytics to understand how Rare Beauty can better connect with its audience, convert visitors into buyers, and retain loyal customers.
 
-🔧 **Web Interface Redesign (Figma):** Creating a more intuitive, conversion-optimized UI with features like an expanded “Find Your Shade” quiz and improved mobile navigation.
+🎨 [View Figma Prototype](https://dash-sheen-59603545.figma.site/) &nbsp;|&nbsp; 📖 [Read Medium Article](https://medium.com/@nakati.akanksha/rare-beautys-dashboard-insights-driving-smarter-marketing-decisions-ff0bc0cc7db6)
 
-🧠 **Brand Strategy Insights:** Synthesizing visual, functional, and emotional elements of Rare Beauty’s digital presence to propose data-backed strategies for acquisition, retention, and referral.
+---
 
-This project serves as both a design portfolio and a strategic case study — showcasing how thoughtful UX, brand positioning, and data storytelling can work together to drive digital growth.
+## 📌 The Problem
 
-## Rare Beauty Marketing Dashboard (Simulated Data + ETL Pipeline)
+Rare Beauty has strong brand recognition and a loyal fanbase, but like many DTC beauty brands, it faces challenges across its digital funnel — visitors drop off before completing purchases, ad spend isn't always directed toward the highest-performing channels, and the mobile experience leaves room for improvement.
 
-📊 An end-to-end marketing analytics project built to analyze Rare Beauty’s campaign performance, financial efficiency, and audience engagement using simulated data.
+This project asks: *what would it look like to fix that using both design thinking and data?*
 
-This project is not based on real data—it uses simulated datasets created to reflect real-world marketing challenges in the beauty industry. The data was processed through a custom ETL pipeline in MySQL before being visualized in Tableau Public.
+---
 
-### 🚀 Project Workflow
+## 🔍 What This Project Covers
 
-Data Simulation
+### 🎨 UX Audit & Figma Redesign
 
-Created marketing datasets (spend, revenue, engagement, audience segments, product sales) to mirror realistic campaign performance.
+The website was evaluated using two industry-standard frameworks:
 
-ETL Pipeline in MySQL
+- **AARRR** *(Acquisition → Activation → Retention → Referral → Revenue)* — maps where users drop off in the funnel
+- **HEART** *(Happiness, Engagement, Adoption, Retention, Task Success)* — measures the quality of the user experience at each touchpoint
 
-Extract → Simulated data imported into staging tables.
+**Issues identified:**
+- Confusing checkout flow causing purchase drop-offs
+- Limited shade-matching guidance for first-time buyers
+- Poor mobile navigation making product discovery harder than it needs to be
 
-Transform → Cleaned, aggregated, and joined across campaign, audience, and product dimensions.
+**What was built:** A Figma prototype with a cleaner layout, an improved "Find Your Shade" quiz, streamlined checkout, and clearer calls-to-action.
 
-Load → Final fact and dimension tables structured for Tableau consumption.
+🔗 [View Prototype →](https://dash-sheen-59603545.figma.site/)
 
-Visualization in Tableau Public
+---
 
-Developed five dashboards to showcase strategic insights.
+### 📊 Marketing Analytics Dashboard
 
-### 📂 Dashboards
+A full analytics pipeline was built from scratch using simulated data designed to mirror real-world beauty industry marketing scenarios.
 
-Executive Dashboard → Revenue, ROAS, CPA, Conversions overview.
+**How the pipeline works:**
 
-Campaign Dashboard → Active campaigns, budget pacing, CTR, alerts.
+```
+Simulated Data  →  MySQL ETL Pipeline  →  Tableau Dashboards
+(ad spend,          (stage → clean →        (5 dashboards for
+ revenue,            transform → load)        business insights)
+ engagement,
+ audience segments)
+```
 
-Financial Dashboard → Budget vs. optimal spend, variance, efficiency score.
+**The 5 Dashboards:**
 
-Product Dashboard → Top product performance, funnel conversion analysis.
+| Dashboard | What It Answers |
+|---|---|
+| 📈 **Executive** | How are we performing overall? *(Revenue, ROAS, CPA, Conversions)* |
+| 📣 **Campaign** | Which campaigns are on track vs. overspending? |
+| 💰 **Financial** | Where are we over/underinvesting relative to expected returns? |
+| 🛍️ **Product** | Which products drive the most conversions and revenue? |
+| 👥 **Audience** | Who are our most engaged and highest-value customers? |
 
-Audience Dashboard → Reach, engagement, LTV, demographic breakdown.
+---
 
-### 🔑 Key Insights 
+## 💡 Key Findings
 
-Email Marketing → Underfunded but top ROI driver.
+- 📧 **Email Marketing** delivers the highest ROI but receives the least budget — a significant missed opportunity
+- 🔍 **Google Ads** drives strong revenue but is underinvested compared to its potential
+- 📱 **Meta & Pinterest Ads** are overfunded, leading to inefficiencies and diminishing returns
+- 👩 **Gen Z & Beauty Enthusiasts** are the most engaged segments with the highest lifetime value
+- 💋 **Holiday Lip Set** is the top seasonal performer with strong conversion rates
 
-Google Ads → High revenue channel but underinvested.
+---
 
-Meta & Pinterest Ads → Overfunded, leading to inefficiencies.
+## 🎯 Strategic Recommendations
 
-Holiday Lip Set → Strong seasonal performer with high conversions.
+1. Reallocate **~$46K toward Email Marketing** to compound its already strong ROI
+2. Increase **Google Ads investment by ~$25K** to close the performance gap
+3. Pull back on **Pinterest and Meta** spend where returns are weakest
+4. Build **mid-funnel content strategies** (tutorials, influencer education) to move hesitant buyers
+5. Invest in **loyalty programs** to retain Gen Z customers long-term
 
-Gen Z & Beauty Enthusiasts → Most engaged and profitable audience segment.
+---
 
-### 🛠️ Tools & Tech
+## 🛠️ Tools & Technologies
 
-MySQL → ETL pipeline (staging → transformation → reporting tables).
+| Tool | Role |
+|---|---|
+| **MySQL** | ETL pipeline — data staging, transformation, and reporting tables |
+| **Tableau Public** | Dashboard design and business insight visualization |
+| **Figma** | UI/UX prototype and website redesign |
+| **AARRR & HEART Frameworks** | Structured the UX audit methodology |
 
-Tableau Public → Dashboard creation & visualization.
+---
 
+## 📂 Repository Structure
 
-### 🎯 Strategic Recommendations
+```
+├── tables.sql                   # Schema definitions for fact & dimension tables
+├── database.sql                 # Full database setup script
+├── insert.sql                   # Simulated data population
+├── truncate.sql                 # Table truncation utility
+├── drop.sql                     # Cleanup / teardown script
+├── rare_beauty_dashboard.twb    # Tableau workbook
+├── rare marketing dashboard.pptx  # Presentation deck with findings & recommendations
+└── Mood_Board.pdf               # Visual brand reference used during redesign
+```
 
-Reallocate $46K into Email Marketing to capture ROI growth.
+---
 
-Increase Google Ads spend by $25K to close underinvestment gap.
+## 🔗 Links
 
-Reduce inefficient spend on Pinterest & Meta Ads.
+- 🎨 [Figma Prototype](https://dash-sheen-59603545.figma.site/)
+- 📖 [Medium Article](https://medium.com/@nakati.akanksha/rare-beautys-dashboard-insights-driving-smarter-marketing-decisions-ff0bc0cc7db6)
 
-Strengthen mid-funnel tactics with education-led content & influencers.
+---
 
-Invest in loyalty programs to build long-term advocacy with Gen Z.
+> **Note:** All data in this project is simulated for analytical purposes. No proprietary Rare Beauty data was used.
