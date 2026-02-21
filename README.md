@@ -1,4 +1,4 @@
-# 💄 Rare Beauty — User-Centered Product Design & Marketing Optimization
+# 💄 Rare Beauty — User Centered Product Design & Marketing Optimization
 
 > A case study combining UX research and marketing analytics to understand how Rare Beauty can better connect with its audience, convert visitors into buyers, and retain loyal customers.
 
