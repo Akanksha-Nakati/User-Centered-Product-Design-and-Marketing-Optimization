@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rare Beauty by Selena Gomez | Vegan &amp; Cruelty Free Makeup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Jost','Helvetica Neue',Arial,sans-serif; background:#fff; color:#1a1a1a; -webkit-font-smoothing:antialiased; }
+    a { text-decoration:none; color:inherit; }
+    button { cursor:pointer; border:none; background:none; font-family:inherit; }
+    img { display:block; max-width:100%; }
+    ul,ol { list-style:none; }
+
+    :root {
+      --black:#000; --near-black:#1a1a1a; --dark:#2c2c2c; --mid:#666; --muted:#999;
+      --border:#e8e2dc; --white:#fff; --cream:#faf7f4; --warm-light:#f5ede6;
+      --blush:#f0d9d0; --rose:#c9877d; --dark-rose:#a85f56; --dark-warm:#1c1714;
+      --success:#3d8c5a; --warning:#b05a00;
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-body:'Jost','Helvetica Neue',Arial,sans-serif;
+    }
+
+    /* ════════════════════════════════════
+       FIRST-TIME VISITOR MODAL
+    ════════════════════════════════════ */
+    .modal-overlay {
+      position:fixed; inset:0; background:rgba(0,0,0,.55);
+      z-index:1000; display:flex; align-items:center; justify-content:center;
+      opacity:0; pointer-events:none; transition:opacity .35s;
+    }
+    .modal-overlay.open { opacity:1; pointer-events:all; }
+    .modal-box {
+      background:var(--cream); max-width:520px; width:90%;
+      display:grid; grid-template-columns:1fr 1fr;
+      position:relative; overflow:hidden;
+    }
+    .modal-image {
+      background:radial-gradient(ellipse at 40% 30%, #fce0d4 0%, #e8a898 45%, #c87868 100%);
+      min-height:340px;
+    }
+    .modal-content { padding:40px 32px; display:flex; flex-direction:column; justify-content:center; gap:14px; }
+    .modal-eyebrow { font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--rose); }
+    .modal-heading { font-family:var(--font-display); font-size:30px; font-weight:300; line-height:1.15; }
+    .modal-desc { font-size:12px; color:var(--mid); line-height:1.7; }
+    .modal-discount { font-size:32px; font-weight:600; color:var(--near-black); letter-spacing:.02em; }
+    .modal-input {
+      border:1.5px solid var(--border); padding:11px 14px;
+      font-family:var(--font-body); font-size:12.5px; outline:none; background:var(--white);
+      transition:border-color .2s;
+    }
+    .modal-input:focus { border-color:var(--near-black); }
+    .btn-modal-cta {
+      background:var(--near-black); color:var(--white);
+      font-size:10px; letter-spacing:.16em; text-transform:uppercase; font-weight:600;
+      padding:13px; transition:background .2s;
+    }
+    .btn-modal-cta:hover { background:var(--dark); }
+    .modal-legal { font-size:9px; color:var(--muted); line-height:1.6; }
+    .modal-close {
+      position:absolute; top:14px; right:16px; font-size:20px; color:var(--mid);
+      line-height:1; padding:4px 8px; transition:color .2s;
+    }
+    .modal-close:hover { color:var(--near-black); }
+    .modal-no-thanks { font-size:10.5px; color:var(--mid); text-align:center; cursor:pointer; letter-spacing:.04em; border-bottom:1px solid currentColor; align-self:center; transition:color .2s; }
+    .modal-no-thanks:hover { color:var(--near-black); }
+
+    /* ════════════════════════════════════
+       PROMO BANNER
+    ════════════════════════════════════ */
+    .promo-banner {
+      background:var(--black); color:var(--white);
+      text-align:center; padding:10px 52px; position:relative; overflow:hidden;
+    }
+    .promo-track { display:flex; transition:transform .5s ease; }
+    .promo-slide { min-width:100%; font-size:11px; letter-spacing:.07em; }
+    .promo-slide a { color:var(--white); font-weight:600; border-bottom:1px solid rgba(255,255,255,.45); padding-bottom:1px; }
+    .promo-slide strong { font-weight:700; }
+    .promo-close {
+      position:absolute; right:16px; top:50%; transform:translateY(-50%);
+      color:rgba(255,255,255,.55); font-size:18px; line-height:1; padding:4px 6px;
+      transition:color .2s;
+    }
+    .promo-close:hover { color:var(--white); }
+
+    /* ════════════════════════════════════
+       SALE URGENCY BAR  ← NEW
+    ════════════════════════════════════ */
+    .urgency-bar {
+      background:var(--rose); color:var(--white);
+      display:flex; align-items:center; justify-content:center; gap:20px;
+      padding:9px 24px; font-size:11.5px; letter-spacing:.05em; flex-wrap:wrap;
+    }
+    .urgency-bar strong { font-weight:700; }
+    .countdown { display:flex; align-items:center; gap:6px; }
+    .countdown-block {
+      background:rgba(0,0,0,.25); border-radius:4px;
+      padding:3px 8px; font-size:13px; font-weight:700;
+      font-variant-numeric:tabular-nums; min-width:36px; text-align:center;
+    }
+    .countdown-sep { font-size:15px; font-weight:700; opacity:.8; }
+    .urgency-cta {
+      border:1.5px solid rgba(255,255,255,.8); color:var(--white);
+      font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+      font-weight:700; padding:6px 18px; transition:background .2s;
+    }
+    .urgency-cta:hover { background:rgba(255,255,255,.15); }
+
+    /* ════════════════════════════════════
+       HEADER
+    ════════════════════════════════════ */
+    .site-header { position:sticky; top:0; z-index:200; background:var(--white); border-bottom:1px solid var(--border); }
+    .header-inner {
+      max-width:1440px; margin:0 auto; padding:0 32px; height:60px;
+      display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+    }
+    .nav-left { display:flex; align-items:center; gap:26px; }
+    .nav-left > a, .nav-left > button {
+      font-size:11.5px; letter-spacing:.05em; color:var(--near-black);
+      display:flex; align-items:center; gap:4px; transition:opacity .2s;
+    }
+    .nav-left > a:hover, .nav-left > button:hover { opacity:.55; }
+    .nav-caret { font-size:7px; opacity:.55; }
+    .nav-badge {
+      background:var(--rose); color:var(--white); font-size:7.5px;
+      font-weight:700; padding:1px 5px; border-radius:2px; letter-spacing:.04em; text-transform:uppercase;
+    }
+    .site-logo {
+      font-family:var(--font-display); font-style:italic;
+      font-size:23px; font-weight:300; letter-spacing:.04em;
+      color:var(--near-black); text-align:center;
+    }
+    .nav-right { display:flex; align-items:center; justify-content:flex-end; gap:20px; }
+    .nav-right > a, .nav-right > button {
+      font-size:11.5px; letter-spacing:.05em; color:var(--near-black);
+      display:flex; align-items:center; gap:6px; transition:opacity .2s;
+    }
+    .nav-right > a:hover, .nav-right > button:hover { opacity:.55; }
+    .nav-icon { width:17px; height:17px; fill:none; stroke:var(--near-black); stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+    .cart-count {
+      background:var(--near-black); color:var(--white);
+      font-size:9px; font-weight:700; width:17px; height:17px;
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+    }
+    /* Free shipping mini bar in header */
+    .shipping-progress-bar {
+      background:var(--cream); border-top:1px solid var(--border);
+      display:flex; align-items:center; justify-content:center; gap:12px;
+      padding:6px 32px; font-size:10.5px; color:var(--mid);
+    }
+    .shipping-track {
+      width:160px; height:4px; background:var(--border); border-radius:99px; position:relative; overflow:hidden;
+    }
+    .shipping-fill {
+      height:100%; border-radius:99px; background:var(--success);
+      transition:width 1s ease;
+    }
+    .shipping-label { font-weight:600; color:var(--success); }
+
+    /* ════════════════════════════════════
+       HERO CAROUSEL
+    ════════════════════════════════════ */
+    .hero { position:relative; overflow:hidden; background:var(--cream); }
+    .hero-track { display:flex; transition:transform .65s cubic-bezier(.77,0,.18,1); will-change:transform; }
+    .hero-slide {
+      min-width:100%; min-height:580px;
+      display:grid; grid-template-columns:1fr 1fr; align-items:center; overflow:hidden;
+    }
+    .slide-bg-lip    { background:linear-gradient(135deg,#f8e8e0 0%,#eed4c8 60%,#e0bdb0 100%); }
+    .slide-bg-fdn    { background:linear-gradient(135deg,#f2ede6 0%,#e4d8cc 60%,#d4c4b4 100%); }
+    .slide-bg-bag    { background:linear-gradient(135deg,#fbe8e4 0%,#f0d0c8 60%,#e2b8ae 100%); }
+    .slide-bg-duo    { background:linear-gradient(135deg,#f5e8dc 0%,#e8d0c0 60%,#d8b8a0 100%); }
+    .slide-bg-eye    { background:linear-gradient(135deg,#e8e4ec 0%,#d4cce0 60%,#c0b4d0 100%); }
+    .slide-bg-bronzer{ background:linear-gradient(135deg,#f4ede0 0%,#e8d8c0 60%,#d8c0a0 100%); }
+    .hero-img-col { height:580px; position:relative; overflow:hidden; }
+    .hero-img-mock { width:100%; height:100%; position:absolute; inset:0; }
+    .mock-lip    { background:radial-gradient(ellipse at 45% 35%,#f9d4ca 0%,#e8a498 45%,#c87868 100%); }
+    .mock-fdn    { background:radial-gradient(ellipse at 45% 35%,#f2e8da 0%,#d8c0a0 45%,#b89878 100%); }
+    .mock-bag    { background:radial-gradient(ellipse at 45% 35%,#fce0d8 0%,#f0b8aa 45%,#d88878 100%); }
+    .mock-duo    { background:radial-gradient(ellipse at 50% 40%,#fcd0c4 0%,#e8a898 45%,#c87868 100%); }
+    .mock-eye    { background:radial-gradient(ellipse at 45% 35%,#d8d0e8 0%,#b8a8d4 45%,#9080b8 100%); }
+    .mock-bronzer{ background:radial-gradient(ellipse at 45% 35%,#f8e4c0 0%,#d4a868 45%,#a87838 100%); }
+    .hero-content-col { padding:56px 72px; display:flex; flex-direction:column; gap:0; }
+    .hero-eyebrow { font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--near-black); margin-bottom:14px; opacity:.6; }
+    .hero-heading { font-family:var(--font-display); font-size:52px; font-weight:300; line-height:1.06; color:var(--near-black); margin-bottom:18px; }
+    .hero-desc { font-size:13px; line-height:1.8; color:var(--dark); margin-bottom:32px; max-width:350px; }
+    .hero-urgency { font-size:11px; font-weight:600; color:var(--dark-rose); letter-spacing:.04em; margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+    .hero-urgency-dot { width:7px; height:7px; border-radius:50%; background:var(--rose); animation:pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .btn-outline {
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1.5px solid var(--near-black); color:var(--near-black);
+      font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+      padding:13px 36px; transition:background .2s,color .2s; align-self:flex-start;
+    }
+    .btn-outline:hover { background:var(--near-black); color:var(--white); }
+    .hero-arrow {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:10;
+      width:40px; height:40px; background:rgba(255,255,255,.85); backdrop-filter:blur(4px);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 2px 12px rgba(0,0,0,.08); transition:background .2s;
+    }
+    .hero-arrow:hover { background:var(--white); }
+    .hero-arrow.prev { left:20px; } .hero-arrow.next { right:20px; }
+    .hero-dots { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:10; }
+    .hero-dot { width:6px; height:6px; border-radius:50%; border:1.5px solid var(--near-black); background:transparent; padding:0; cursor:pointer; transition:background .2s; }
+    .hero-dot.active { background:var(--near-black); }
+
+    /* ════════════════════════════════════
+       SHARED SECTION
+    ════════════════════════════════════ */
+    .section { padding:68px 0; }
+    .section-inner { max-width:1340px; margin:0 auto; padding:0 52px; }
+    .section-head { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:36px; }
+    .section-title { font-family:var(--font-display); font-size:42px; font-weight:300; line-height:1.1; }
+    .link-arrow { font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--near-black); border-bottom:1px solid var(--near-black); padding-bottom:2px; transition:opacity .2s; }
+    .link-arrow:hover { opacity:.55; }
+
+    /* ════════════════════════════════════
+       NEW: "START HERE" ONBOARDING STRIP  ← NEW
+    ════════════════════════════════════ */
+    .start-here-section { background:var(--near-black); color:var(--white); padding:0; }
+    .start-here-inner {
+      max-width:1340px; margin:0 auto; padding:0 52px;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      border-left:1px solid rgba(255,255,255,.08);
+    }
+    .start-here-card {
+      padding:36px 28px; border-right:1px solid rgba(255,255,255,.08);
+      display:flex; flex-direction:column; gap:10px; cursor:pointer;
+      transition:background .25s;
+    }
+    .start-here-card:hover { background:rgba(255,255,255,.04); }
+    .sh-icon { font-size:26px; margin-bottom:4px; }
+    .sh-label { font-size:9px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--rose); }
+    .sh-title { font-family:var(--font-display); font-size:22px; font-weight:300; line-height:1.2; }
+    .sh-desc { font-size:11.5px; color:rgba(255,255,255,.55); line-height:1.65; }
+    .sh-link { font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--rose); margin-top:4px; display:flex; align-items:center; gap:6px; }
+    .sh-link::after { content:"→"; }
+
+    /* ════════════════════════════════════
+       PRODUCT RAIL
+    ════════════════════════════════════ */
+    .product-rail-section { background:var(--white); }
+    /* Filter tabs */
+    .filter-row { display:flex; align-items:center; gap:8px; margin-bottom:28px; flex-wrap:wrap; }
+    .filter-tab {
+      font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; font-weight:600;
+      padding:8px 18px; border:1.5px solid var(--border); color:var(--mid);
+      border-radius:99px; cursor:pointer; transition:all .2s;
+    }
+    .filter-tab:hover, .filter-tab.active { border-color:var(--near-black); color:var(--near-black); background:var(--near-black); color:var(--white); }
+    .filter-sort {
+      margin-left:auto; font-size:11px; color:var(--mid); display:flex; align-items:center; gap:8px;
+    }
+    .sort-select {
+      border:1.5px solid var(--border); padding:7px 12px; font-family:var(--font-body);
+      font-size:11px; color:var(--near-black); outline:none; background:var(--white); cursor:pointer;
+    }
+    .product-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+    }
+    .product-card { cursor:pointer; }
+    .product-thumb { position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--cream); margin-bottom:12px; }
+    .product-thumb-img { width:100%; height:100%; transition:transform .45s ease; }
+    .product-card:hover .product-thumb-img { transform:scale(1.04); }
+    /* Badges */
+    .badge-row { position:absolute; top:10px; left:10px; display:flex; gap:5px; z-index:2; flex-direction:column; }
+    .badge {
+      font-size:8px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+      padding:3px 9px; align-self:flex-start;
+    }
+    .badge-new   { background:var(--near-black); color:var(--white); }
+    .badge-sale  { background:var(--rose); color:var(--white); }
+    .badge-low   { background:#b05a00; color:var(--white); }
+    .badge-sold  { background:var(--mid); color:var(--white); }
+    /* Quick actions overlay */
+    .product-quick {
+      position:absolute; bottom:0; left:0; right:0;
+      background:rgba(255,255,255,.95); padding:10px 14px;
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:9.5px; letter-spacing:.06em; color:var(--mid);
+      transform:translateY(100%); transition:transform .25s;
+    }
+    .product-card:hover .product-quick { transform:translateY(0); }
+    .product-quick-link { color:var(--near-black); font-weight:600; cursor:pointer; }
+    .product-quick-link:hover { text-decoration:underline; }
+    .product-name { font-size:12.5px; font-weight:400; line-height:1.45; margin-bottom:6px; }
+    .product-swatches { display:flex; gap:5px; margin-bottom:10px; flex-wrap:wrap; align-items:center; }
+    .swatch { width:14px; height:14px; border-radius:50%; border:1.5px solid rgba(0,0,0,.08); cursor:pointer; transition:transform .15s; }
+    .swatch:hover { transform:scale(1.25); }
+    .swatch-count { font-size:10px; color:var(--muted); }
+    /* Urgency line */
+    .product-urgency { font-size:10.5px; font-weight:600; color:var(--warning); margin-bottom:8px; display:flex; align-items:center; gap:5px; }
+    .product-urgency::before { content:"●"; font-size:7px; color:var(--warning); }
+    /* Returns line */
+    .product-returns { font-size:10px; color:var(--mid); margin-bottom:10px; display:flex; align-items:center; gap:5px; }
+    .product-returns svg { width:12px; height:12px; flex-shrink:0; stroke:var(--muted); fill:none; stroke-width:1.5; }
+    .btn-add-bag {
+      width:100%; border:1.5px solid var(--near-black); color:var(--near-black);
+      font-size:10px; letter-spacing:.1em; text-transform:uppercase; font-weight:700;
+      padding:10px 12px; display:flex; align-items:center; justify-content:space-between;
+      transition:background .2s, color .2s;
+    }
+    .btn-add-bag:hover { background:var(--near-black); color:var(--white); }
+    .btn-add-bag:disabled, .btn-add-bag.oos { opacity:.45; cursor:not-allowed; }
+
+    /* product image mocks */
+    .pi-brow    { background:linear-gradient(165deg,#f0e8e0 0%,#c8b8a8 55%,#988878 100%); }
+    .pi-blush   { background:linear-gradient(165deg,#fce0d4 0%,#e8a898 55%,#c87868 100%); }
+    .pi-parfum  { background:linear-gradient(165deg,#f8f0e8 0%,#ddd0bc 55%,#b8a888 100%); }
+    .pi-trio    { background:linear-gradient(165deg,#fde8e0 0%,#f0c0b0 55%,#d89080 100%); }
+    .pi-lip     { background:linear-gradient(165deg,#fdd8d0 0%,#f0a898 55%,#d07868 100%); }
+    .pi-body    { background:linear-gradient(165deg,#f8ece0 0%,#e0ceb0 55%,#c0a880 100%); }
+    .pi-mascara { background:linear-gradient(165deg,#e8e0d8 0%,#b8a898 55%,#887870 100%); }
+    .pi-blush-mini { background:linear-gradient(165deg,#fddcd8 0%,#f0b0a8 55%,#d08878 100%); }
+
+    /* swatches */
+    .s-bliss { background:#d4a0a8; } .s-hope { background:#e8b8b0; } .s-adore { background:#d89090; }
+    .s-happy { background:#e0a0a0; } .s-worth { background:#c88888; } .s-virtue { background:#b87878; }
+    .s-pb { background:#c09060; } .s-bs { background:#c89848; }
+    .s-joy { background:#d89898; } .s-wonder { background:#e8c8c0; }
+
+    /* ════════════════════════════════════
+       NEW: BUILD YOUR ROUTINE QUIZ  ← NEW
+    ════════════════════════════════════ */
+    .quiz-section { background:var(--warm-light); overflow:hidden; }
+    .quiz-inner {
+      max-width:1340px; margin:0 auto; padding:68px 52px;
+      display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;
+    }
+    .quiz-left { }
+    .quiz-eyebrow { font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--rose); margin-bottom:14px; }
+    .quiz-heading { font-family:var(--font-display); font-size:48px; font-weight:300; line-height:1.1; margin-bottom:18px; }
+    .quiz-desc { font-size:13px; line-height:1.8; color:var(--dark); margin-bottom:32px; max-width:380px; }
+    .quiz-steps { display:flex; flex-direction:column; gap:16px; margin-bottom:32px; }
+    .quiz-step { display:flex; align-items:flex-start; gap:16px; }
+    .quiz-step-num {
+      width:28px; height:28px; border-radius:50%; background:var(--rose); color:var(--white);
+      font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .quiz-step-text { font-size:12.5px; line-height:1.6; color:var(--dark); padding-top:4px; }
+    .quiz-step-text strong { display:block; font-weight:600; margin-bottom:2px; }
+    .btn-filled {
+      display:inline-flex; align-items:center; justify-content:center;
+      background:var(--near-black); color:var(--white);
+      font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+      padding:14px 40px; transition:background .2s;
+    }
+    .btn-filled:hover { background:var(--dark); }
+    /* Interactive quiz widget */
+    .quiz-widget {
+      background:var(--white); padding:36px; display:flex; flex-direction:column; gap:20px;
+      box-shadow:0 8px 48px rgba(0,0,0,.07);
+    }
+    .quiz-widget-title { font-family:var(--font-display); font-size:22px; font-weight:300; color:var(--near-black); }
+    .quiz-q { font-size:12px; font-weight:600; letter-spacing:.03em; color:var(--near-black); margin-bottom:10px; }
+    .quiz-options { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .quiz-opt {
+      padding:11px 14px; border:1.5px solid var(--border);
+      font-size:11.5px; font-weight:400; color:var(--dark);
+      cursor:pointer; transition:all .18s; text-align:left;
+    }
+    .quiz-opt:hover { border-color:var(--rose); color:var(--rose); }
+    .quiz-opt.selected { border-color:var(--near-black); background:var(--near-black); color:var(--white); }
+    .quiz-progress-bar { height:3px; background:var(--border); border-radius:99px; }
+    .quiz-progress-fill { height:100%; background:var(--rose); border-radius:99px; width:33%; transition:width .4s; }
+    .quiz-progress-text { font-size:9.5px; color:var(--muted); letter-spacing:.06em; }
+    .quiz-footer { display:flex; align-items:center; justify-content:space-between; }
+    .btn-quiz-next {
+      background:var(--near-black); color:var(--white);
+      font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
+      padding:11px 28px; transition:background .2s;
+    }
+    .btn-quiz-next:hover { background:var(--dark); }
+
+    /* ════════════════════════════════════
+       SPOTLIGHT
+    ════════════════════════════════════ */
+    .spotlight-section { background:var(--cream); }
+    .spotlight-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .spotlight-image { aspect-ratio:1; background:radial-gradient(ellipse at 38% 32%,#fce0d4 0%,#e8a898 40%,#c87868 100%); }
+    .spotlight-content { padding:40px 0; }
+    .spotlight-desc { font-size:13.5px; line-height:1.85; color:var(--dark); margin-bottom:36px; max-width:380px; }
+    .trust-badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .trust-badge {
+      display:flex; align-items:center; gap:7px;
+      border:1px solid var(--border); padding:8px 14px;
+      font-size:10.5px; font-weight:500; color:var(--dark);
+    }
+    .trust-badge svg { width:15px; height:15px; fill:none; stroke:var(--rose); stroke-width:1.8; }
+
+    /* ════════════════════════════════════
+       SHADE FINDER
+    ════════════════════════════════════ */
+    .shade-finder-section { background:var(--dark-warm); color:var(--white); }
+    .shade-finder-inner {
+      max-width:1340px; margin:0 auto; padding:76px 52px;
+      display:grid; grid-template-columns:400px 1fr; gap:80px; align-items:center;
+    }
+    .sf-eyebrow { font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:rgba(255,255,255,.45); margin-bottom:14px; }
+    .sf-heading { font-family:var(--font-display); font-size:50px; font-weight:300; line-height:1.08; margin-bottom:20px; }
+    .sf-desc { font-size:13px; line-height:1.8; color:rgba(255,255,255,.6); margin-bottom:30px; max-width:340px; }
+    .btn-match {
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1.5px solid rgba(255,255,255,.55); color:var(--white);
+      font-size:10px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+      padding:13px 34px; transition:all .2s;
+    }
+    .btn-match:hover { background:rgba(255,255,255,.08); border-color:var(--white); }
+    .sf-scale { margin-top:30px; }
+    .sf-labels { display:flex; justify-content:space-between; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:8px; }
+    .sf-bar { height:9px; border-radius:99px; background:linear-gradient(to right,#f5e4d0 0%,#e8d0b0 16%,#d4b080 32%,#c09060 48%,#a06840 64%,#784028 80%,#502010 100%); }
+    .sf-right { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }
+    .sf-face { aspect-ratio:2/3; border-radius:2px; }
+    .sf-f1 { background:linear-gradient(170deg,#fae8d8 0%,#e8c8a8 55%,#c8a880 100%); }
+    .sf-f2 { background:linear-gradient(170deg,#f0d8c0 0%,#d4b080 55%,#b08858 100%); }
+    .sf-f3 { background:linear-gradient(170deg,#e0c8a8 0%,#c0a070 55%,#986040 100%); }
+    .sf-f4 { background:linear-gradient(170deg,#d0b888 0%,#a87848 55%,#785028 100%); }
+    .sf-f5 { background:linear-gradient(170deg,#b09068 0%,#886040 55%,#583820 100%); }
+
+    /* ════════════════════════════════════
+       COMMUNITY
+    ════════════════════════════════════ */
+    .community-section { background:var(--white); }
+    .community-header { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; margin-bottom:36px; }
+    .community-title { font-family:var(--font-display); font-size:48px; font-weight:300; line-height:1.1; }
+    .community-desc { font-size:13px; line-height:1.8; color:var(--mid); margin-bottom:18px; }
+    .ugc-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:5px; }
+    .ugc-cell { aspect-ratio:1; position:relative; overflow:hidden; cursor:pointer; }
+    .ugc-cell:hover .ugc-handle { opacity:1; }
+    .ugc-img { width:100%; height:100%; }
+    .ugc-img-1 { background:linear-gradient(145deg,#f4d4cc 0%,#dca8a0 100%); }
+    .ugc-img-2 { background:linear-gradient(145deg,#e4d0dc 0%,#c8a8c0 100%); }
+    .ugc-img-3 { background:linear-gradient(145deg,#f0e0c8 0%,#d4b890 100%); }
+    .ugc-img-4 { background:linear-gradient(145deg,#f4ccc8 0%,#d8a09c 100%); }
+    .ugc-img-5 { background:linear-gradient(145deg,#d8d0e8 0%,#b8a8d4 100%); }
+    .ugc-img-6 { background:linear-gradient(145deg,#ecc8d4 0%,#d0a0b4 100%); }
+    .ugc-handle {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top,rgba(0,0,0,.6),transparent);
+      color:var(--white); font-size:10px; font-weight:500;
+      padding:22px 10px 8px; opacity:0; transition:opacity .25s;
+    }
+
+    /* ════════════════════════════════════
+       SHOP BY CATEGORY
+    ════════════════════════════════════ */
+    .category-section { background:var(--cream); }
+    .category-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .category-card { position:relative; overflow:hidden; cursor:pointer; display:block; }
+    .category-card:hover .cat-img { transform:scale(1.04); }
+    .cat-img { aspect-ratio:3/4; transition:transform .5s ease; }
+    .cat-lip { background:linear-gradient(170deg,#fce0d8 10%,#e8a8a0 55%,#c87870 100%); }
+    .cat-eye { background:linear-gradient(170deg,#dcd0e8 10%,#b8a0d0 55%,#9080b8 100%); }
+    .cat-bestsell { background:linear-gradient(170deg,#f8e0d4 10%,#e8b8a8 55%,#c89080 100%); }
+    .cat-label { position:absolute; bottom:28px; left:28px; font-family:var(--font-display); font-size:34px; font-weight:300; color:var(--white); text-shadow:0 2px 20px rgba(0,0,0,.22); }
+
+    /* ════════════════════════════════════
+       IMPACT SPLIT
+    ════════════════════════════════════ */
+    .impact-section { display:grid; grid-template-columns:1fr 1fr; min-height:500px; }
+    .impact-image { background:linear-gradient(135deg,#edd4c8 0%,#d8b0a0 50%,#c09080 100%); }
+    .impact-content { background:var(--warm-light); display:flex; flex-direction:column; justify-content:center; padding:80px; }
+    .impact-title { font-family:var(--font-display); font-size:46px; font-weight:300; line-height:1.1; margin-bottom:22px; }
+    .impact-desc { font-size:13.5px; line-height:1.85; color:var(--dark); margin-bottom:32px; max-width:380px; }
+    .impact-stat { display:flex; gap:32px; margin-bottom:32px; flex-wrap:wrap; }
+    .impact-stat-item { }
+    .impact-stat-num { font-family:var(--font-display); font-size:40px; font-weight:300; color:var(--rose); line-height:1; }
+    .impact-stat-label { font-size:11px; color:var(--mid); letter-spacing:.05em; margin-top:4px; }
+
+    /* ════════════════════════════════════
+       NEW: LOYALTY / REWARDS  ← NEW
+    ════════════════════════════════════ */
+    .loyalty-section { background:var(--near-black); color:var(--white); }
+    .loyalty-inner {
+      max-width:1340px; margin:0 auto; padding:72px 52px;
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .loyalty-eyebrow { font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; color:var(--rose); margin-bottom:14px; }
+    .loyalty-heading { font-family:var(--font-display); font-size:48px; font-weight:300; line-height:1.1; margin-bottom:18px; }
+    .loyalty-desc { font-size:13px; line-height:1.8; color:rgba(255,255,255,.6); margin-bottom:30px; max-width:400px; }
+    .loyalty-tiers { display:flex; flex-direction:column; gap:12px; }
+    .loyalty-tier {
+      display:flex; align-items:center; gap:16px;
+      padding:18px 22px; border:1px solid rgba(255,255,255,.1); transition:border-color .2s;
+    }
+    .loyalty-tier:hover { border-color:rgba(255,255,255,.3); }
+    .tier-icon { font-size:22px; }
+    .tier-name { font-size:12px; font-weight:700; letter-spacing:.04em; color:var(--white); }
+    .tier-desc { font-size:11.5px; color:rgba(255,255,255,.5); margin-top:2px; }
+    .loyalty-perks { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .loyalty-perk {
+      background:rgba(255,255,255,.05); padding:24px 20px;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .perk-icon { font-size:20px; }
+    .perk-title { font-size:13px; font-weight:600; color:var(--white); }
+    .perk-desc { font-size:11.5px; color:rgba(255,255,255,.5); line-height:1.6; }
+
+    /* ════════════════════════════════════
+       NEW: REFERRAL BANNER  ← NEW
+    ════════════════════════════════════ */
+    .referral-section { background:var(--blush); }
+    .referral-inner {
+      max-width:1340px; margin:0 auto; padding:56px 52px;
+      display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+    }
+    .referral-left { }
+    .referral-eyebrow { font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--dark-rose); margin-bottom:10px; }
+    .referral-heading { font-family:var(--font-display); font-size:38px; font-weight:300; line-height:1.1; color:var(--near-black); margin-bottom:12px; }
+    .referral-desc { font-size:13px; color:var(--dark); line-height:1.7; max-width:420px; }
+    .referral-cards { display:flex; gap:12px; }
+    .referral-card {
+      background:var(--white); padding:24px 28px; min-width:160px;
+      display:flex; flex-direction:column; gap:6px; align-items:center; text-align:center;
+    }
+    .referral-amount { font-family:var(--font-display); font-size:36px; font-weight:300; color:var(--rose); }
+    .referral-card-label { font-size:10.5px; color:var(--mid); letter-spacing:.04em; }
+    .referral-cta { margin-top:20px; }
+
+    /* ════════════════════════════════════
+       SUPPORT STRIP  ← NEW
+    ════════════════════════════════════ */
+    .support-strip { background:var(--cream); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .support-inner {
+      max-width:1340px; margin:0 auto; padding:0 52px;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      divide-x:1px solid var(--border);
+    }
+    .support-item {
+      padding:28px 24px; display:flex; gap:14px; align-items:flex-start;
+      border-right:1px solid var(--border);
+    }
+    .support-item:last-child { border-right:none; }
+    .support-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+    .support-title { font-size:12.5px; font-weight:700; color:var(--near-black); margin-bottom:4px; }
+    .support-desc { font-size:11px; color:var(--mid); line-height:1.6; }
+    .support-link { font-size:10.5px; font-weight:700; color:var(--rose); border-bottom:1px solid var(--rose); padding-bottom:1px; margin-top:6px; display:inline-block; cursor:pointer; }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    .site-footer { background:var(--dark-warm); color:rgba(255,255,255,.8); }
+    .footer-inner { max-width:1340px; margin:0 auto; padding:0 52px; }
+    .footer-top {
+      display:grid; grid-template-columns:1.2fr repeat(3,1fr) 1.4fr;
+      gap:40px; padding:60px 0 48px; border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand-logo { font-family:var(--font-display); font-style:italic; font-size:23px; font-weight:300; color:var(--white); margin-bottom:16px; display:block; }
+    .footer-tagline { font-size:11.5px; line-height:1.65; color:rgba(255,255,255,.35); max-width:200px; margin-bottom:22px; }
+    .footer-social { display:flex; gap:12px; }
+    .footer-social a { width:32px; height:32px; border:1px solid rgba(255,255,255,.18); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:border-color .2s; }
+    .footer-social a:hover { border-color:rgba(255,255,255,.6); }
+    .footer-social svg { width:13px; height:13px; fill:rgba(255,255,255,.65); }
+    .footer-col-title { font-size:9px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:rgba(255,255,255,.35); margin-bottom:16px; }
+    .footer-nav-links { display:flex; flex-direction:column; gap:11px; }
+    .footer-nav-links a { font-size:12.5px; color:rgba(255,255,255,.65); font-weight:300; transition:color .2s; }
+    .footer-nav-links a:hover { color:var(--white); }
+    .footer-newsletter-heading { font-size:12.5px; color:rgba(255,255,255,.55); margin-bottom:16px; line-height:1.55; }
+    .newsletter-group { display:flex; flex-direction:column; gap:9px; }
+    .newsletter-row { display:flex; border:1px solid rgba(255,255,255,.18); transition:border-color .2s; }
+    .newsletter-row:focus-within { border-color:rgba(255,255,255,.45); }
+    .newsletter-input { flex:1; background:transparent; border:none; outline:none; color:var(--white); font-family:var(--font-body); font-size:12px; padding:10px 12px; }
+    .newsletter-input::placeholder { color:rgba(255,255,255,.28); }
+    .btn-join { background:rgba(255,255,255,.07); color:var(--white); font-family:var(--font-body); font-size:9px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; padding:10px 16px; border-left:1px solid rgba(255,255,255,.12); transition:background .2s; }
+    .btn-join:hover { background:rgba(255,255,255,.14); }
+    .newsletter-legal { font-size:9px; color:rgba(255,255,255,.22); line-height:1.6; margin-top:4px; }
+    .newsletter-legal a { color:rgba(255,255,255,.3); text-decoration:underline; }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; padding:20px 0; flex-wrap:wrap; gap:10px; }
+    .footer-copyright { font-size:10px; color:rgba(255,255,255,.28); }
+    .footer-legal-links { display:flex; gap:18px; flex-wrap:wrap; }
+    .footer-legal-links a { font-size:10px; color:rgba(255,255,255,.28); transition:color .2s; }
+    .footer-legal-links a:hover { color:rgba(255,255,255,.65); }
+
+    /* ════════════════════════════════════
+       FLOATING LIVE CHAT  ← NEW
+    ════════════════════════════════════ */
+    .chat-fab {
+      position:fixed; bottom:28px; right:28px; z-index:500;
+      display:flex; flex-direction:column; align-items:flex-end; gap:12px;
+    }
+    .chat-bubble {
+      background:var(--white); border:1px solid var(--border);
+      padding:14px 18px; border-radius:12px 12px 0 12px;
+      font-size:12px; line-height:1.5; color:var(--near-black);
+      box-shadow:0 8px 32px rgba(0,0,0,.12); max-width:220px;
+      display:none;
+    }
+    .chat-bubble.visible { display:block; }
+    .chat-bubble strong { display:block; font-weight:700; margin-bottom:4px; }
+    .chat-btn {
+      width:56px; height:56px; border-radius:50%;
+      background:var(--near-black); color:var(--white);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 6px 24px rgba(0,0,0,.22);
+      font-size:22px; transition:transform .2s, background .2s;
+    }
+    .chat-btn:hover { transform:scale(1.08); background:var(--dark); }
+    .chat-badge-dot {
+      position:absolute; top:0; right:0;
+      width:14px; height:14px; border-radius:50%; background:var(--rose);
+      border:2px solid var(--white);
+    }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width:1100px) {
+      .product-grid { grid-template-columns:repeat(3,1fr); }
+      .footer-top { grid-template-columns:1fr 1fr; }
+      .start-here-inner { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:860px) {
+      .hero-slide { grid-template-columns:1fr; min-height:auto; }
+      .hero-img-col { height:260px; }
+      .hero-content-col { padding:36px 24px; }
+      .hero-heading { font-size:36px; }
+      .section-inner { padding:0 24px; }
+      .spotlight-inner,.quiz-inner,.loyalty-inner { grid-template-columns:1fr; gap:32px; }
+      .shade-finder-inner { grid-template-columns:1fr; }
+      .community-header { grid-template-columns:1fr; }
+      .category-grid { grid-template-columns:1fr; }
+      .impact-section { grid-template-columns:1fr; }
+      .impact-image { min-height:240px; }
+      .ugc-grid { grid-template-columns:repeat(3,1fr); }
+      .support-inner { grid-template-columns:1fr 1fr; }
+      .footer-top { grid-template-columns:1fr; padding:40px 0 32px; }
+      .referral-inner { flex-direction:column; }
+      .header-inner { padding:0 20px; }
+      .nav-left { display:none; }
+      .start-here-inner { grid-template-columns:1fr; }
+      .loyalty-perks { grid-template-columns:1fr; }
+    }
+    @media (max-width:600px) {
+      .product-grid { grid-template-columns:repeat(2,1fr); }
+      .sf-right { grid-template-columns:repeat(3,1fr); }
+      .support-inner { grid-template-columns:1fr; }
+      .referral-cards { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ▓▓▓ FIRST-TIME VISITOR MODAL ▓▓▓ -->
+<div class="modal-overlay" id="welcomeModal" role="dialog" aria-modal="true" aria-label="Welcome offer">
+  <div class="modal-box">
+    <div class="modal-image"></div>
+    <div class="modal-content">
+      <p class="modal-eyebrow">Welcome Gift</p>
+      <h2 class="modal-heading">New here?<br>You deserve this.</h2>
+      <p class="modal-desc">Get 15% off your first order when you join the Rare Beauty family.</p>
+      <div class="modal-discount">15% OFF</div>
+      <input class="modal-input" type="email" placeholder="Enter your email" aria-label="Your email" />
+      <button class="btn-modal-cta" onclick="closeModal()">Claim My Discount</button>
+      <p class="modal-legal">By signing up you agree to receive marketing emails. Unsubscribe anytime. Valid for new customers only.</p>
+      <span class="modal-no-thanks" onclick="closeModal()">No thanks, I'll pay full price</span>
+    </div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+  </div>
+</div>
+
+<!-- ▓▓▓ PROMO BANNER ▓▓▓ -->
+<div class="promo-banner" id="promoBanner">
+  <div class="promo-track" id="promoTrack">
+    <div class="promo-slide">Free Puffy Essentials Pouch w/ $60 order. Code: <strong>POUCH26</strong>. <a href="#">Read More</a></div>
+    <div class="promo-slide">Free Standard U.S. Shipping on orders $50+. <a href="#">Shop Now</a></div>
+    <div class="promo-slide">New to Rare Beauty? Get <strong>15% off</strong> your first order — <a href="#" onclick="openModal()">Claim Offer</a></div>
+  </div>
+  <button class="promo-close" onclick="this.closest('.promo-banner').remove()" aria-label="Close banner">&times;</button>
+</div>
+
+<!-- ▓▓▓ SALE URGENCY BAR ▓▓▓ -->
+<div class="urgency-bar">
+  <strong>⚡ 30% off Lip Faves — Ends in</strong>
+  <div class="countdown">
+    <span class="countdown-block" id="cd-h">00</span>
+    <span class="countdown-sep">:</span>
+    <span class="countdown-block" id="cd-m">00</span>
+    <span class="countdown-sep">:</span>
+    <span class="countdown-block" id="cd-s">00</span>
+  </div>
+  <a href="#" class="urgency-cta">Shop Lip Faves</a>
+</div>
+
+<!-- ▓▓▓ HEADER ▓▓▓ -->
+<header class="site-header">
+  <div class="header-inner">
+    <nav class="nav-left">
+      <button aria-expanded="false" aria-haspopup="true">Shop <span class="nav-caret">▾</span></button>
+      <a href="#">Shade Finder</a>
+      <a href="#">Rare Impact</a>
+      <a href="#">Comfort Club</a>
+      <a href="#" style="display:flex;align-items:center;gap:5px;">
+        Start Here <span class="nav-badge">NEW</span>
+      </a>
+    </nav>
+    <a href="#" class="site-logo"><em>Rare Beauty</em></a>
+    <div class="nav-right">
+      <button aria-label="Search">
+        <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><line x1="17.5" y1="17.5" x2="22" y2="22"/></svg>
+      </button>
+      <!-- Country selector -->
+      <button style="font-size:11px;letter-spacing:.04em;display:flex;align-items:center;gap:5px;" aria-label="Country: United States">
+        🇺🇸 <span style="color:var(--mid);">US</span> <span class="nav-caret">▾</span>
+      </button>
+      <a href="#" aria-label="Account">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="#" aria-label="Bag, 0 items">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+  <!-- Free shipping progress -->
+  <div class="shipping-progress-bar">
+    <span>You're <strong>$50.00 away</strong> from free shipping</span>
+    <div class="shipping-track"><div class="shipping-fill" style="width:0%"></div></div>
+    <span class="shipping-label">Free at $50</span>
+  </div>
+</header>
+
+<!-- ▓▓▓ HERO ▓▓▓ -->
+<section class="hero" aria-label="Featured promotions">
+  <div class="hero-track" id="heroTrack">
+
+    <div class="hero-slide slide-bg-lip">
+      <div class="hero-img-col"><div class="hero-img-mock mock-lip"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">Limited Time</p>
+        <h2 class="hero-heading">30% off<br>Lip Faves</h2>
+        <div class="hero-urgency"><span class="hero-urgency-dot"></span> Sale ends March 29 — don't miss out</div>
+        <p class="hero-desc">Stock up and save on Soft Pinch Tinted Lip Oil + Kind Words Matte Lipstick. No code needed.</p>
+        <a href="#" class="btn-outline">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="hero-slide slide-bg-fdn">
+      <div class="hero-img-col"><div class="hero-img-mock mock-fdn"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">Coming Soon · Drops 4/2</p>
+        <h2 class="hero-heading">True to Myself<br>Natural Matte<br>Foundation</h2>
+        <p class="hero-desc">Self-primes. Self-sets. Stays fresh all day. You've never met a matte like this.</p>
+        <a href="#" class="btn-outline">Explore</a>
+      </div>
+    </div>
+
+    <div class="hero-slide slide-bg-bag">
+      <div class="hero-img-col"><div class="hero-img-mock mock-bag"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">New · Exclusive Online</p>
+        <h2 class="hero-heading">Puffy<br>Makeup Bag<br>— Happy</h2>
+        <p class="hero-desc">Your go-to bag, now in your go-to blush shade. Puffy, packable, and protective.</p>
+        <a href="#" class="btn-outline">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="hero-slide slide-bg-duo">
+      <div class="hero-img-col"><div class="hero-img-mock mock-duo"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">New · 20% Off Bundle</p>
+        <h2 class="hero-heading">Liquid Blush<br>&amp; Brow Gel<br>Duo</h2>
+        <p class="hero-desc">Bundle your favorites and save 20%. Online only.</p>
+        <a href="#" class="btn-outline">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="hero-slide slide-bg-eye">
+      <div class="hero-img-col"><div class="hero-img-mock mock-eye"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">New Collection</p>
+        <h2 class="hero-heading">Neutral Eye<br>Collection</h2>
+        <p class="hero-desc">Eye essentials that smolder with rich hues and stunning finishes.</p>
+        <a href="#" class="btn-outline">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="hero-slide slide-bg-bronzer">
+      <div class="hero-img-col"><div class="hero-img-mock mock-bronzer"></div></div>
+      <div class="hero-content-col">
+        <p class="hero-eyebrow">Just Arrived</p>
+        <h2 class="hero-heading">Warm Wishes<br>Soft Matte<br>Powder Bronzer</h2>
+        <p class="hero-desc">The perfect pairing for seamless warmth from within—designed in harmony with the Angled Powder Brush.</p>
+        <a href="#" class="btn-outline">Shop Now</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="hero-arrow prev" id="heroPrev" aria-label="Previous">
+    <svg width="13" height="13" stroke="currentColor" stroke-width="2" fill="none" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button class="hero-arrow next" id="heroNext" aria-label="Next">
+    <svg width="13" height="13" stroke="currentColor" stroke-width="2" fill="none" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-i="0"></button>
+    <button class="hero-dot" data-i="1"></button>
+    <button class="hero-dot" data-i="2"></button>
+    <button class="hero-dot" data-i="3"></button>
+    <button class="hero-dot" data-i="4"></button>
+    <button class="hero-dot" data-i="5"></button>
+  </div>
+</section>
+
+<!-- ▓▓▓ START HERE ONBOARDING STRIP ▓▓▓ -->
+<section class="start-here-section" aria-label="New to Rare Beauty">
+  <div class="start-here-inner">
+    <div class="start-here-card">
+      <div class="sh-icon">✨</div>
+      <p class="sh-label">New Here?</p>
+      <h3 class="sh-title">Start with<br>Bestsellers</h3>
+      <p class="sh-desc">Not sure where to begin? Our cult favorites are the perfect introduction to Rare Beauty.</p>
+      <span class="sh-link">Shop Bestsellers</span>
+    </div>
+    <div class="start-here-card">
+      <div class="sh-icon">🎨</div>
+      <p class="sh-label">Find Your Match</p>
+      <h3 class="sh-title">Foundation<br>Shade Finder</h3>
+      <p class="sh-desc">Answer 3 quick questions to find your perfect complexion shade and complementary products.</p>
+      <span class="sh-link">Take the Quiz</span>
+    </div>
+    <div class="start-here-card">
+      <div class="sh-icon">💧</div>
+      <p class="sh-label">Personalized</p>
+      <h3 class="sh-title">Build Your<br>Routine</h3>
+      <p class="sh-desc">Tell us your skin type and goals—we'll curate a step-by-step routine just for you.</p>
+      <span class="sh-link">Get My Routine</span>
+    </div>
+    <div class="start-here-card">
+      <div class="sh-icon">🎁</div>
+      <p class="sh-label">First Order</p>
+      <h3 class="sh-title">15% Off<br>Welcome Gift</h3>
+      <p class="sh-desc">New customers get an exclusive discount on their first order. No code needed—just sign up.</p>
+      <span class="sh-link" onclick="openModal()">Claim Offer</span>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ SUPPORT STRIP ▓▓▓ -->
+<section class="support-strip">
+  <div class="support-inner">
+    <div class="support-item">
+      <div class="support-icon">💬</div>
+      <div>
+        <p class="support-title">Live Chat Support</p>
+        <p class="support-desc">Chat with our beauty experts Mon–Fri, 9am–6pm ET. Average response: under 2 minutes.</p>
+        <span class="support-link">Start a Chat</span>
+      </div>
+    </div>
+    <div class="support-item">
+      <div class="support-icon">🔄</div>
+      <div>
+        <p class="support-title">Easy Returns</p>
+        <p class="support-desc">Free returns within 30 days for U.S. orders. No questions asked.</p>
+        <span class="support-link">Start a Return</span>
+      </div>
+    </div>
+    <div class="support-item">
+      <div class="support-icon">📦</div>
+      <div>
+        <p class="support-title">Track Your Order</p>
+        <p class="support-desc">Real-time tracking from our warehouse to your door. Enter your order number below.</p>
+        <span class="support-link">Track Order</span>
+      </div>
+    </div>
+    <div class="support-item">
+      <div class="support-icon">🌍</div>
+      <div>
+        <p class="support-title">Ships Worldwide</p>
+        <p class="support-desc">We ship to 100+ countries. Duties and local shipping rates calculated at checkout.</p>
+        <span class="support-link">View Shipping Info</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ BESTSELLERS PRODUCT RAIL ▓▓▓ -->
+<section class="section product-rail-section">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2 class="section-title">Bestsellers</h2>
+      <a href="#" class="link-arrow">View All</a>
+    </div>
+
+    <!-- Filter + Sort row -->
+    <div class="filter-row">
+      <button class="filter-tab active" onclick="setFilter(this,'all')">All</button>
+      <button class="filter-tab" onclick="setFilter(this,'face')">Face</button>
+      <button class="filter-tab" onclick="setFilter(this,'eye')">Eye</button>
+      <button class="filter-tab" onclick="setFilter(this,'lip')">Lip</button>
+      <button class="filter-tab" onclick="setFilter(this,'body')">Body &amp; Fragrance</button>
+      <button class="filter-tab" onclick="setFilter(this,'new')">New</button>
+      <div class="filter-sort">
+        <label for="sortSelect" style="font-size:11px;color:var(--mid);">Sort by:</label>
+        <select id="sortSelect" class="sort-select">
+          <option>Bestselling</option>
+          <option>Price: Low–High</option>
+          <option>Price: High–Low</option>
+          <option>Newest</option>
+          <option>% Off</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+      <!-- 1 -->
+      <article class="product-card" data-cat="face">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-blush"></div>
+          <div class="badge-row"><span class="badge badge-new">Bestseller</span><span class="badge badge-low">Only 4 left</span></div>
+          <div class="product-quick">
+            <span>12 shades</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Soft Pinch Liquid Blush</h3>
+        <div class="product-swatches">
+          <span class="swatch s-bliss" title="Bliss"></span>
+          <span class="swatch s-hope" title="Hope"></span>
+          <span class="swatch s-adore" title="Adore"></span>
+          <span class="swatch s-happy" title="Happy"></span>
+          <span class="swatch s-worth" title="Worth"></span>
+          <span class="swatch-count">+7</span>
+        </div>
+        <p class="product-urgency">Only 4 left — selling fast</p>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $25</span></button>
+      </article>
+
+      <!-- 2 -->
+      <article class="product-card" data-cat="eye">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-brow"></div>
+          <div class="badge-row"><span class="badge badge-new">New Shades</span></div>
+          <div class="product-quick">
+            <span>4 shades</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Brow Harmony Flexible Lifting Gel</h3>
+        <div class="product-swatches">
+          <span class="swatch" style="background:#8b7355" title="Soft Brown"></span>
+          <span class="swatch" style="background:#4a3728" title="Deep Brown"></span>
+          <span class="swatch" style="background:#1a1a1a" title="Black"></span>
+          <span class="swatch" style="background:#b09070" title="Warm Blonde"></span>
+        </div>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $21</span></button>
+      </article>
+
+      <!-- 3 -->
+      <article class="product-card" data-cat="lip">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-lip"></div>
+          <div class="badge-row"><span class="badge badge-sale">30% Off</span></div>
+          <div class="product-quick">
+            <span>8 shades</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Soft Pinch Tinted Lip Oil</h3>
+        <div class="product-swatches">
+          <span class="swatch s-hope" title="Hope"></span>
+          <span class="swatch s-happy" title="Happy"></span>
+          <span class="swatch s-joy" title="Joy"></span>
+          <span class="swatch s-wonder" title="Wonder"></span>
+          <span class="swatch-count">+4</span>
+        </div>
+        <p class="product-urgency">Sale ends March 29</p>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• <s style="opacity:.5;font-weight:400">$24</s> $16.80</span></button>
+      </article>
+
+      <!-- 4 -->
+      <article class="product-card" data-cat="face">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-parfum"></div>
+          <div class="product-quick">
+            <span>1 size</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Rare Eau de Parfum</h3>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $75</span></button>
+      </article>
+
+      <!-- 5 -->
+      <article class="product-card" data-cat="face">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-trio"></div>
+          <div class="badge-row"><span class="badge badge-new">New</span></div>
+          <div class="product-quick">
+            <span>2 shades</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Soft Pinch Cheek &amp; Lip Trio</h3>
+        <div class="product-swatches">
+          <span class="swatch s-pb" title="Power Boost"></span>
+          <span class="swatch s-bs" title="Bright Side"></span>
+        </div>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $36</span></button>
+      </article>
+
+      <!-- 6 -->
+      <article class="product-card" data-cat="body">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-body"></div>
+          <div class="badge-row"><span class="badge badge-sold">Limited Edition</span></div>
+          <div class="product-quick">
+            <span>1 set</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Find Comfort Mini Body Essentials — Awaken Confidence</h3>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $28</span></button>
+      </article>
+
+      <!-- 7 -->
+      <article class="product-card" data-cat="face">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-blush-mini"></div>
+          <div class="badge-row"><span class="badge badge-low">Almost gone</span></div>
+          <div class="product-quick">
+            <span>10 shades</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Soft Pinch Liquid Blush Mini</h3>
+        <div class="product-swatches">
+          <span class="swatch s-hope" title="Hope"></span>
+          <span class="swatch s-happy" title="Happy"></span>
+          <span class="swatch s-joy" title="Joy"></span>
+          <span class="swatch-count">+7</span>
+        </div>
+        <p class="product-urgency">Almost sold out — grab yours</p>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $16</span></button>
+      </article>
+
+      <!-- 8 -->
+      <article class="product-card" data-cat="face">
+        <div class="product-thumb">
+          <div class="product-thumb-img pi-mascara"></div>
+          <div class="product-quick">
+            <span>1 shade</span>
+            <span class="product-quick-link">Quick view</span>
+          </div>
+        </div>
+        <h3 class="product-name">Perfect Strokes Universal Volumizing Mascara</h3>
+        <p class="product-returns">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109 9M3 12V6m0 6h6"/></svg>
+          Free returns within 30 days
+        </p>
+        <button class="btn-add-bag">ADD TO BAG <span>• $22</span></button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ BUILD YOUR ROUTINE QUIZ ▓▓▓ -->
+<section class="quiz-section section">
+  <div class="quiz-inner">
+    <div class="quiz-left">
+      <p class="quiz-eyebrow">Personalized for You</p>
+      <h2 class="quiz-heading">Build Your<br>Perfect Routine</h2>
+      <p class="quiz-desc">No more guessing. Tell us a little about your skin and goals, and we'll hand-pick a step-by-step routine made just for you.</p>
+      <div class="quiz-steps">
+        <div class="quiz-step">
+          <div class="quiz-step-num">1</div>
+          <div class="quiz-step-text"><strong>Tell us about your skin</strong>Your skin type, tone, and concerns help us get it right.</div>
+        </div>
+        <div class="quiz-step">
+          <div class="quiz-step-num">2</div>
+          <div class="quiz-step-text"><strong>Share your goals</strong>Coverage preference, finish, and the looks you love.</div>
+        </div>
+        <div class="quiz-step">
+          <div class="quiz-step-num">3</div>
+          <div class="quiz-step-text"><strong>Get your routine</strong>A curated, shoppable routine delivered instantly.</div>
+        </div>
+      </div>
+      <a href="#" class="btn-filled">Start My Routine Quiz</a>
+    </div>
+    <!-- Interactive quiz widget -->
+    <div class="quiz-widget" id="quizWidget">
+      <p class="quiz-widget-title">Quick Skin Quiz</p>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizFill"></div></div>
+      <p class="quiz-progress-text" id="quizProgressText">Step 1 of 3</p>
+
+      <!-- Step 1 -->
+      <div id="qStep1">
+        <p class="quiz-q">What's your skin type?</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="selectOpt(this)">Dry</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Oily</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Combination</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Normal</button>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div id="qStep2" style="display:none">
+        <p class="quiz-q">What coverage do you prefer?</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="selectOpt(this)">Light &amp; Dewy</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Natural Glow</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Medium Coverage</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Full Coverage</button>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div id="qStep3" style="display:none">
+        <p class="quiz-q">What's your main skin concern?</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="selectOpt(this)">Uneven Tone</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Pores &amp; Texture</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Dark Spots</button>
+          <button class="quiz-opt" onclick="selectOpt(this)">Dullness</button>
+        </div>
+      </div>
+      <!-- Result -->
+      <div id="qResult" style="display:none;text-align:center;padding:16px 0;">
+        <p style="font-size:22px;margin-bottom:8px;">✨</p>
+        <p style="font-family:var(--font-display);font-size:22px;font-weight:300;margin-bottom:8px;">Your Routine is Ready!</p>
+        <p style="font-size:12px;color:var(--mid);margin-bottom:20px;">Based on your answers, we've curated 4 products perfect for your skin.</p>
+        <a href="#" class="btn-filled" style="display:inline-flex;">See My Routine →</a>
+      </div>
+
+      <div class="quiz-footer" id="quizFooter">
+        <span style="font-size:11px;color:var(--mid);cursor:pointer;" onclick="resetQuiz()">Start over</span>
+        <button class="btn-quiz-next" id="quizNext" onclick="nextStep()">Next →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ SOFT PINCH SPOTLIGHT ▓▓▓ -->
+<section class="section spotlight-section">
+  <div class="section-inner">
+    <div class="spotlight-inner">
+      <div class="spotlight-image"></div>
+      <div class="spotlight-content">
+        <h2 class="section-title" style="font-size:54px;">Soft Pinch<br>Liquid Blush</h2>
+        <p class="spotlight-desc">Meet our award-winning bestseller that's sold every four seconds. Lightweight, layerable, long-lasting—and loved by so many worldwide. Get pinch-perfect color in just one dot.</p>
+        <a href="#" class="link-arrow">Shop Soft Pinch</a>
+        <!-- Trust badges — addresses accessibility & claims gap -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Vegan &amp; Cruelty-Free
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+            Accessible Packaging
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+            Rare Impact Fund
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ FOUNDATION SHADE FINDER ▓▓▓ -->
+<section class="shade-finder-section">
+  <div class="shade-finder-inner">
+    <div>
+      <p class="sf-eyebrow">Shade Finder</p>
+      <h2 class="sf-heading">Foundation<br>Shade Finder</h2>
+      <p class="sf-desc">Find your best shade, along with complexion must-haves perfect for your skin tone. All in just 3 simple steps.</p>
+      <a href="#" class="btn-match">Match Me</a>
+      <div class="sf-scale">
+        <div class="sf-labels">
+          <span>light</span><span>light medium</span><span>medium</span><span>medium tan</span><span>medium deep</span><span>deep</span>
+        </div>
+        <div class="sf-bar"></div>
+      </div>
+    </div>
+    <div class="sf-right">
+      <div class="sf-face sf-f1"></div>
+      <div class="sf-face sf-f2"></div>
+      <div class="sf-face sf-f3"></div>
+      <div class="sf-face sf-f4"></div>
+      <div class="sf-face sf-f5"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ COMMUNITY ▓▓▓ -->
+<section class="section community-section">
+  <div class="section-inner">
+    <div class="community-header">
+      <div>
+        <p style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:600;">@RareBeauty</p>
+        <h2 class="community-title">This is Your<br>Community</h2>
+      </div>
+      <div>
+        <p class="community-desc">Share your #RareRoutine and tag @rarebeauty for a chance to be featured!</p>
+        <a href="#" class="link-arrow">Learn More</a>
+      </div>
+    </div>
+    <div class="ugc-grid">
+      <div class="ugc-cell"><div class="ugc-img ugc-img-1"></div><div class="ugc-handle">@uniquely.celestial.inc</div></div>
+      <div class="ugc-cell"><div class="ugc-img ugc-img-2"></div><div class="ugc-handle">@honeyflushed</div></div>
+      <div class="ugc-cell"><div class="ugc-img ugc-img-3"></div><div class="ugc-handle">@skeletofff</div></div>
+      <div class="ugc-cell"><div class="ugc-img ugc-img-4"></div><div class="ugc-handle">@dedrianaanicole</div></div>
+      <div class="ugc-cell"><div class="ugc-img ugc-img-5"></div><div class="ugc-handle">@anjali.lehal</div></div>
+      <div class="ugc-cell"><div class="ugc-img ugc-img-6"></div><div class="ugc-handle">@maitrithakkarofficial</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ SHOP BY CATEGORY ▓▓▓ -->
+<section class="section category-section">
+  <div class="section-inner">
+    <div class="section-head"><h2 class="section-title">Shop by<br>Category</h2></div>
+    <div class="category-grid">
+      <a href="#" class="category-card"><div class="cat-img cat-lip"></div><span class="cat-label">Lip</span></a>
+      <a href="#" class="category-card"><div class="cat-img cat-eye"></div><span class="cat-label">Eye</span></a>
+      <a href="#" class="category-card"><div class="cat-img cat-bestsell"></div><span class="cat-label">Bestsellers</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ IMPACT ▓▓▓ -->
+<section class="impact-section">
+  <div class="impact-image"></div>
+  <div class="impact-content">
+    <h2 class="impact-title">Make an impact<br>on mental health</h2>
+    <div class="impact-stat">
+      <div class="impact-stat-item">
+        <div class="impact-stat-num">1%</div>
+        <div class="impact-stat-label">of annual sales donated</div>
+      </div>
+      <div class="impact-stat-item">
+        <div class="impact-stat-num">$10M+</div>
+        <div class="impact-stat-label">raised for mental health</div>
+      </div>
+    </div>
+    <p class="impact-desc">1% of Rare Beauty's annual sales go directly to the Rare Impact Fund to expand mental health services in underserved communities.</p>
+    <a href="#" class="btn-outline">Learn More</a>
+  </div>
+</section>
+
+<!-- ▓▓▓ LOYALTY / REWARDS ▓▓▓ -->
+<section class="loyalty-section">
+  <div class="loyalty-inner">
+    <div>
+      <p class="loyalty-eyebrow">Comfort Club</p>
+      <h2 class="loyalty-heading">Earn Rewards<br>Every Time<br>You Shop</h2>
+      <p class="loyalty-desc">Join Comfort Club and unlock exclusive perks, early access to new drops, birthday gifts, and points that add up to real savings.</p>
+      <a href="#" class="btn-outlined-white" style="display:inline-flex;border:1.5px solid rgba(255,255,255,.5);color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:13px 36px;margin-top:8px;transition:all .2s;">Join Free</a>
+      <div class="loyalty-tiers" style="margin-top:36px;">
+        <div class="loyalty-tier">
+          <div class="tier-icon">🌸</div>
+          <div><p class="tier-name">Rare — 0–499 pts</p><p class="tier-desc">Welcome perks, birthday gift, early access</p></div>
+        </div>
+        <div class="loyalty-tier">
+          <div class="tier-icon">🌺</div>
+          <div><p class="tier-name">Rarer — 500–999 pts</p><p class="tier-desc">Free shipping, bonus point events, exclusive samples</p></div>
+        </div>
+        <div class="loyalty-tier">
+          <div class="tier-icon">💎</div>
+          <div><p class="tier-name">Rarest — 1000+ pts</p><p class="tier-desc">VIP access, free products, personal beauty advisor</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="loyalty-perks">
+      <div class="loyalty-perk"><div class="perk-icon">🎂</div><p class="perk-title">Birthday Gift</p><p class="perk-desc">A surprise gift delivered to you every year on your birthday.</p></div>
+      <div class="loyalty-perk"><div class="perk-icon">⚡</div><p class="perk-title">Early Access</p><p class="perk-desc">Shop new launches before anyone else — including limited editions.</p></div>
+      <div class="loyalty-perk"><div class="perk-icon">🎁</div><p class="perk-title">Free Products</p><p class="perk-desc">Redeem your points for full-size products, no restrictions.</p></div>
+      <div class="loyalty-perk"><div class="perk-icon">🚚</div><p class="perk-title">Free Shipping</p><p class="perk-desc">Unlock free standard shipping on every order at Rarer tier.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ REFERRAL BANNER ▓▓▓ -->
+<section class="referral-section">
+  <div class="referral-inner">
+    <div class="referral-left">
+      <p class="referral-eyebrow">Share the Love</p>
+      <h2 class="referral-heading">Give $10, Get $10</h2>
+      <p class="referral-desc">Share your unique link with a friend. When they make their first purchase, you both get $10 off your next order. No limits on how many friends you can refer.</p>
+      <a href="#" class="btn-outline referral-cta">Get My Referral Link</a>
+    </div>
+    <div class="referral-cards">
+      <div class="referral-card">
+        <div class="referral-amount">$10</div>
+        <p class="referral-card-label">You get</p>
+      </div>
+      <div style="display:flex;align-items:center;font-size:20px;color:var(--mid);">+</div>
+      <div class="referral-card">
+        <div class="referral-amount">$10</div>
+        <p class="referral-card-label">Your friend gets</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ▓▓▓ FOOTER ▓▓▓ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-brand-logo">Rare Beauty</span>
+        <p class="footer-tagline">Makeup made to feel good in, without hiding who you are.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 2H8C4.686 2 2 4.686 2 8v8c0 3.314 2.686 6 6 6h8c3.314 0 6-2.686 6-6V8c0-3.314-2.686-6-6-6zm4 14a4 4 0 01-4 4H8a4 4 0 01-4-4V8a4 4 0 014-4h8a4 4 0 014 4v8zM12 7a5 5 0 100 10A5 5 0 0012 7zm0 8a3 3 0 110-6 3 3 0 010 6zm5.25-8.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1c1714"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.852 0 1.265.64 1.265 1.408 0 .858-.546 2.14-.828 3.33-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.56 0-2.384-1.714-4.052-4.161-4.052-2.834 0-4.498 2.126-4.498 4.322 0 .856.33 1.773.741 2.274a.3.3 0 01.069.283c-.076.311-.244.995-.277 1.134-.044.183-.145.222-.334.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.966-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Shop</p>
+        <nav class="footer-nav-links">
+          <a href="#">Face</a><a href="#">Eye</a><a href="#">Lip</a><a href="#">Body</a><a href="#">Fragrance</a><a href="#">Tools</a><a href="#">Sets</a><a href="#">Online Only</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <nav class="footer-nav-links">
+          <a href="#">About Us</a><a href="#">Rare Impact</a><a href="#">Made Accessible</a><a href="#">Sustainability</a><a href="#">Store Locator</a><a href="#">Partnerships</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-col-title">Customer Service</p>
+        <nav class="footer-nav-links">
+          <a href="#">Contact Us</a><a href="#">Live Chat</a><a href="#">Shipping &amp; Returns</a><a href="#">Start a U.S. Return</a><a href="#">Track My Order</a><a href="#">FAQs</a><a href="#">U.S. Gift Card Balance</a><a href="#">Klarna</a><a href="#">Accessibility</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer-newsletter-heading">Sign up for the latest updates, special offers, and more.</p>
+        <div class="newsletter-group">
+          <div class="newsletter-row">
+            <input class="newsletter-input" type="email" placeholder="Your Email" />
+            <button class="btn-join">Join Us</button>
+          </div>
+          <div class="newsletter-row">
+            <input class="newsletter-input" type="tel" placeholder="Your Mobile #" />
+            <button class="btn-join">Join Us</button>
+          </div>
+          <p class="newsletter-legal">By signing up you agree to receive marketing messages from Rare Beauty. Consent not required. View our <a href="#">Privacy Policy</a> &amp; <a href="#">Terms</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Rare Beauty all rights reserved</p>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">UGC Terms</a><a href="#">Your Privacy Choices</a><a href="#">CA Notice at Collection</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ▓▓▓ FLOATING LIVE CHAT ▓▓▓ -->
+<div class="chat-fab" id="chatFab">
+  <div class="chat-bubble" id="chatBubble">
+    <strong>Hi there! 👋</strong>
+    Need help finding your shade or tracking an order? We're here Mon–Fri, 9am–6pm ET.
+  </div>
+  <div style="position:relative;">
+    <button class="chat-btn" onclick="toggleChat()" aria-label="Open live chat">💬</button>
+    <span class="chat-badge-dot"></span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Hero Carousel ── */
+  const heroTrack = document.getElementById('heroTrack');
+  const heroDots  = [...document.querySelectorAll('.hero-dot')];
+  const HERO_TOTAL = 6;
+  let heroIdx = 0, heroTimer;
+
+  function heroGo(i) {
+    heroIdx = ((i % HERO_TOTAL) + HERO_TOTAL) % HERO_TOTAL;
+    heroTrack.style.transform = `translateX(-${heroIdx * 100}%)`;
+    heroDots.forEach((d, j) => d.classList.toggle('active', j === heroIdx));
+  }
+  function startHeroTimer() { clearInterval(heroTimer); heroTimer = setInterval(() => heroGo(heroIdx + 1), 5500); }
+  document.getElementById('heroPrev').addEventListener('click', () => { heroGo(heroIdx - 1); startHeroTimer(); });
+  document.getElementById('heroNext').addEventListener('click', () => { heroGo(heroIdx + 1); startHeroTimer(); });
+  heroDots.forEach(d => d.addEventListener('click', () => { heroGo(+d.dataset.i); startHeroTimer(); }));
+  startHeroTimer();
+
+  /* ── Promo Banner rotation ── */
+  const promoTrack = document.getElementById('promoTrack');
+  if (promoTrack) {
+    let pi = 0, PTOTAL = 3;
+    setInterval(() => { pi = (pi + 1) % PTOTAL; promoTrack.style.transform = `translateX(-${pi * 100}%)`; }, 4000);
+  }
+
+  /* ── Sale Countdown: target = March 29, 2026 midnight ET ── */
+  function updateCountdown() {
+    const target = new Date('2026-03-30T05:00:00Z').getTime(); // midnight ET = 05:00 UTC
+    const now    = Date.now();
+    const diff   = Math.max(0, target - now);
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const pad = n => String(n).padStart(2, '0');
+    const hEl = document.getElementById('cd-h');
+    const mEl = document.getElementById('cd-m');
+    const sEl = document.getElementById('cd-s');
+    if (hEl) { hEl.textContent = pad(h); mEl.textContent = pad(m); sEl.textContent = pad(s); }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ── First-time visitor modal (shows after 3s) ── */
+  const modal = document.getElementById('welcomeModal');
+  if (modal && !sessionStorage.getItem('rb_modal_seen')) {
+    setTimeout(() => { modal.classList.add('open'); }, 3000);
+  }
+  window.openModal  = () => { modal.classList.add('open'); };
+  window.closeModal = () => { modal.classList.remove('open'); sessionStorage.setItem('rb_modal_seen', '1'); };
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  /* ── Quiz widget ── */
+  let qStep = 1;
+  window.selectOpt = function(btn) {
+    btn.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+  };
+  window.nextStep = function() {
+    const current = document.getElementById(`qStep${qStep}`);
+    const selected = current ? current.querySelector('.quiz-opt.selected') : null;
+    if (!selected && qStep <= 3) return; // require selection
+    qStep++;
+    if (current) current.style.display = 'none';
+    const fills = ['33%','66%','100%'];
+    const fill = document.getElementById('quizFill');
+    const progressText = document.getElementById('quizProgressText');
+    if (qStep <= 3) {
+      document.getElementById(`qStep${qStep}`).style.display = 'block';
+      fill.style.width = fills[qStep - 2] || '100%';
+      progressText.textContent = `Step ${qStep} of 3`;
+    } else {
+      document.getElementById('qResult').style.display = 'block';
+      document.getElementById('quizFooter').style.display = 'none';
+      fill.style.width = '100%';
+    }
+  };
+  window.resetQuiz = function() {
+    qStep = 1;
+    [1,2,3].forEach(i => {
+      const el = document.getElementById(`qStep${i}`);
+      if (el) { el.style.display = i === 1 ? 'block' : 'none'; el.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected')); }
+    });
+    const r = document.getElementById('qResult'); if(r) r.style.display = 'none';
+    const f = document.getElementById('quizFooter'); if(f) f.style.display = 'flex';
+    document.getElementById('quizFill').style.width = '33%';
+    document.getElementById('quizProgressText').textContent = 'Step 1 of 3';
+  };
+
+  /* ── Filter tabs ── */
+  window.setFilter = function(btn, cat) {
+    document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#productGrid .product-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+    });
+  };
+
+  /* ── Live chat toggle ── */
+  let chatOpen = false;
+  window.toggleChat = function() {
+    chatOpen = !chatOpen;
+    const b = document.getElementById('chatBubble');
+    if (b) b.classList.toggle('visible', chatOpen);
+  };
+  // Show chat bubble after 8s
+  setTimeout(() => { const b = document.getElementById('chatBubble'); if(b) { b.classList.add('visible'); chatOpen = true; }}, 8000);
+
+  /* ── Free shipping progress (demo: animates bar) ── */
+  setTimeout(() => {
+    const fill = document.querySelector('.shipping-fill');
+    if (fill) fill.style.width = '0%'; // cart is empty
+  }, 500);
+
+})();
+</script>
+
+</body>
+</html>
